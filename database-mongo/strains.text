@@ -1,0 +1,18 @@
+Ocean Beach, false, true, false, true, 4, 77, 'Hybrid', 23,'Head high with relaxed body feel',"Hybrid, Heady euphoria gives way to creativity and good moods, making this strain an excellent choice for focused tasks and unwinding after work."
+Pancakes, false, true, true, false, 4.5, 46, 'Indica', 18 'Relaxed happy head high', "Pancakes offers classic indica effects, including a weighted, relaxing physical buzz that can curb physical discomfort, nausea, joint pain, and insomnia."
+Pink Rozay, true, true, false, 4.8, 1253, 'Hybrid', 22,'Relaxed body feel', "This delectable treat of a strain should be enjoyed with a double dose of care due to its extremely high THC content, hybrid, Uplifting indica-dominant hybrid strain known for its relaxing and euphoric effects."
+Sweet Tea, true, false,true, 4.3, 10, 'Hybrid', 19.'Sweet flavor profile that tastes similar to a floral jasmine tea and sugared oranges', "Medical marijuana patients choose this strain for its ability to relieve symptoms associated with chronic depression and anxiety."
+Sticky Buns, true, false, true, 4.8,44, 'Hybrid', 22, 'Powerful full-body effects elevated by a jolt of cerebral energy.', "Stress, tension, and sour moods melt away with the carefree mindset and physical relaxation that comes with this rich hybrid."
+Snow Man, false, false, true, 4.5, 102, 'Hybrid', 20, 'Induces powerful but comfortable effects and has a distinct aroma', "This multiple award-winning hybrid's supremacy is no longer a secret, and consumers will search far and wide to get their hands sticky"
+Cereal Milk, false, true, false, 4.5, 345, 'Sativa', 18, 'Relaxed happy head high',"This gem of a strain should be enjoyed with a double dose of care due to its extremely high THC content, Uplifting satvia-dominant hybrid strain known for its relaxing and euphoric effects."
+Berry Pie, true, true, true,true, 5, 1001, 'Hybrid',19, 'The relaxing body effects that help to relieve chronic pain and insomnia', "This dynamic hybrid boasts flavors of lime candy, mint, and spice that spark flavors of earth and chocolate when activated by heat."
+Georgia Pie,false, true, false, 4.6, 204, 'Hybrid', 21, 'With buds that are dense and colorful this strain smells of sweet and sour cherry pie.', 'The effects have been known to come on in minutes and stick around for a couple hours.'
+Honey Bun, true, false, true, true, 4.2, 300, Hybrid, 20, 'Happy head high with a string body feel', "Nausea, Insomnia, and sour moods melt away with the carefree mindset and physical relaxation that comes with this rich hybrid."
+
+
+
+
+Name, nausea, pain, insomnia, stress, rating, ratingCount, type, thc, shortDesc, longDesc
+Choose up to three
+category:
+Nausea, Pain, Insomnia, Stress
