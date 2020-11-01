@@ -1,11 +1,9 @@
-var express = require('express');
-
-var bodyParser = require('body-parser');
+const express = require('express');
 // UNCOMMENT THE DATABASE YOU'D LIKE TO USE
 // var items = require('../database-mysql');
-var items = require('../database-mongo');
+const items = require('../database-mongo');
 
-var app = express();
+const app = express();
 
 // UNCOMMENT FOR REACT
 app.use(express.static(__dirname + '/../react-client/dist'));
@@ -14,9 +12,9 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 // app.use(express.static(__dirname + '/../angular-client'));
 // app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/items', function (req, res) {
-  items.selectAll(function(err, data) {
-    if(err) {
+app.get('/items', (req, res) => {
+  items.selectAll((err, data) => {
+    if (err) {
       res.sendStatus(500);
     } else {
       res.status(200).send(data);
@@ -25,16 +23,16 @@ app.get('/items', function (req, res) {
 });
 
 app.post('/items', (req, res) => {
-  console.log(req.body);
-  items.addOne((err, data) => {
+  console.log('Log in server index', req.body);
+  items.addOne(req.body, (err, data) => {
     if(err) {
       res.sendStatus(500);
     } else {
-      res.sendStatus(201);
+      res.sendStatus(201).send(data);
     }
   });
 });
 
-app.listen(3000, function() {
+app.listen(3000, () => {
   console.log('listening on port 3000!');
 });
