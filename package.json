@@ -31,7 +31,8 @@
     "mongoose": "^4.8.6",
     "mysql": "^2.13.0",
     "nodemon": "^2.0.6",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
   }
 }

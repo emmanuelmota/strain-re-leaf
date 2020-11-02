@@ -1,23 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import $ from 'jquery';
-import List from './components/List.jsx';
+import Decide from './components/Decide.jsx';
+import styled from 'styled-components';
 
 const axios = require('axios').default;
+
+const Master = styled.div`
+  width: 50%;
+  margin: auto;
+`;
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       items: [],
+      decideShow: true,
     };
+    this.getAll = this.getAll.bind(this);
   }
 
   componentDidMount() {
     // console.log('Hi!');
+    this.getAll();
+  }
+
+  getAll() {
     axios.get('/items')
       .then((response) => {
-        console.log(response.data);
+        //console.log(response.data);
         this.setState({
           items: response.data,
         });
@@ -28,12 +40,15 @@ class App extends React.Component {
   }
 
   render() {
-    const { items } = this.state;
+    const { items, decideShow } = this.state;
+    const decide = decideShow ? (
+      <Decide/>
+    )
+      : <div />;
     return (
-      <div>
-        <h1>Item List</h1>
-        <List items={items} />
-      </div>
+      <Master id="Master">
+        <div id="Modal">{decide}</div>
+      </Master>
     );
   }
 }
