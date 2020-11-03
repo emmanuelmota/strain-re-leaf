@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import List from './List.jsx';
 
+const axios = require('axios').default;
+
 const TitleH1 = styled.h1`
 color: white;
 font-family: verdana;
@@ -49,12 +51,14 @@ text-align:center;
 //     return prop === true
 //   }
 //     );
-// }
+//
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      select: [],
+    };
     this.filterIt = this.filterIt.bind(this);
   }
 
@@ -64,18 +68,35 @@ class Results extends React.Component {
 
   filterIt() {
     const { chosen, available } = this.props;
-    // const arr = [...chosen];
-    //const selections = chosen.filter(item => item: true);
-    // console.log(selections);
-    let chosenFiltered = [];
-    Object.keys(chosen).forEach(key => {
-      if (chosen[key] === true) {
-        console.log(key, chosen[key]);
-        chosenFiltered.push(key);
-      }
-    });
-    this.setState({})
-    console.log(chosenFiltered);
+    const { select } = this.state;
+    // let chosenFiltered = [];
+    // Object.keys(chosen).forEach(key => {
+    //   if (chosen[key] === true) {
+    //     console.log(key, chosen[key]);
+    //     chosenFiltered.push({[key]:chosen[key]});
+    //   }
+    // });
+    // this.setState ({
+    //   select: chosenFiltered,
+    // });
+
+    // filter chosen to only have true
+    let filteredObj = Object.keys(chosen).reduce((p, c) => {
+      if (chosen[c]) p[c] = chosen[c];
+      return p;
+    }, {});
+    console.log('result of filter',filteredObj );
+
+    axios.get('/items/results', {
+      params: filteredObj
+    })
+      .then(function (response) {
+        console.log(' back from DB', response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+
   }
 
   render() {

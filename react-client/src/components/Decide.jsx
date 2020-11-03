@@ -69,7 +69,7 @@ class Decide extends React.Component {
     return (
       <DecideDiv>
         <DecideTitle>
-          <TitleH1>Help me decide</TitleH1>
+          <TitleH1>What ails you my friend ?</TitleH1>
         </DecideTitle>
         <AilmentList>
           {listItems}

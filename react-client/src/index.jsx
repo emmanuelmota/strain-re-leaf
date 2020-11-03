@@ -95,7 +95,6 @@ class App extends React.Component {
 
   recommendToggle() {
     const { decideShow, recommendShow } = this.state;
-
     this.setState({
       decideShow: !decideShow,
       recommendShow: !recommendShow,

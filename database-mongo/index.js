@@ -14,10 +14,10 @@ db.once('open', () => {
 
 const itemSchema = mongoose.Schema({
   name: String,
-  nausea: Boolean,
-  pain: Boolean,
-  insomnia: Boolean,
-  stress: Boolean,
+  Nausea: Boolean,
+  Pain: Boolean,
+  Sleep: Boolean,
+  Stress: Boolean,
   rating: Number,
   rating_count: Number,
   type: String,
@@ -38,6 +38,16 @@ const selectAll = (callback) => {
     }
   });
 };
+const selectSome = (data, callback) => {
+  console.log('data in db', data);
+  Item.find(data, (err, items) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, items);
+    }
+  });
+};
 
 const addOne = (data, callback) => {
   Item.create(data, (err, items) => {
@@ -49,4 +59,5 @@ const addOne = (data, callback) => {
   });
 };
 module.exports.selectAll = selectAll;
+module.exports.selectSome = selectSome;
 module.exports.addOne = addOne;
