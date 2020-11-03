@@ -22,7 +22,8 @@ justify-content: center;
 
 `;
 const DecideTitle = styled.div`
-//display:flex;
+display:flex;
+justify-content:center;
 `;
 const AilmentList = styled.ul`
 padding:0px;

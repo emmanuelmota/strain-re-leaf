@@ -25,6 +25,7 @@ class App extends React.Component {
         Sleep: false,
         Stress: false,
       },
+      chosen: [],
       Count: 0,
     };
     this.optionSelector = this.optionSelector.bind(this);
@@ -93,20 +94,22 @@ class App extends React.Component {
   }
 
   recommendToggle() {
+    const { decideShow, recommendShow } = this.state;
+
     this.setState({
-      decideShow: !state.decideShow,
-      recommendShow: !state.recommendShow,
+      decideShow: !decideShow,
+      recommendShow: !recommendShow,
     });
   }
 
   render() {
-    const { items, decideShow, recommendShow, options } = this.state;
+    const { items, decideShow, recommendShow, options, chosen } = this.state;
     const decide = decideShow ? (
       <Decide decide={this.optionSelector} recToggle={this.recommendToggle} />
     )
       : <div />;
     const results = recommendShow ? (
-      <Results chosen={options} />
+      <Results chosen={options} available={items} toFilter={chosen}/>
     )
       : <div />;
     return (

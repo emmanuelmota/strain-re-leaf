@@ -55,14 +55,27 @@ class Results extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.filterIt = this.filterIt.bind(this);
   }
 
   componentDidMount() {
-    const { chosen } = this.props;
+    this.filterIt();
+  }
+
+  filterIt() {
+    const { chosen, available } = this.props;
     // const arr = [...chosen];
-    console.log(chosen);
     //const selections = chosen.filter(item => item: true);
     // console.log(selections);
+    let chosenFiltered = [];
+    Object.keys(chosen).forEach(key => {
+      if (chosen[key] === true) {
+        console.log(key, chosen[key]);
+        chosenFiltered.push(key);
+      }
+    });
+    this.setState({})
+    console.log(chosenFiltered);
   }
 
   render() {
