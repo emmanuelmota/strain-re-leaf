@@ -28,7 +28,7 @@ app.get('/items', (req, res) => {
 });
 
 app.get('/items/results', (req, res) => {
-  console.log('Get in server', req.query);
+  //console.log('Get in server', req.query);
 
   items.selectSome(req.query, (err, data) => {
     if (err) {
@@ -40,7 +40,7 @@ app.get('/items/results', (req, res) => {
 });
 
 app.post('/items', (req, res) => {
-  console.log('Log in server index', req);
+  console.log('post in server index', req);
   items.addOne(req.body, (err, data) => {
     if(err) {
       res.sendStatus(500);

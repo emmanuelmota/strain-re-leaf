@@ -3,8 +3,8 @@ body {
   width: 50%;
   padding: 0px;
 }
-#header {
 
+#header {
   margin: 0px;
   background-image: url("./header.png");
   height: 110px;

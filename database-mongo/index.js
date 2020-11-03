@@ -39,7 +39,7 @@ const selectAll = (callback) => {
   });
 };
 const selectSome = (data, callback) => {
-  console.log('data in db', data);
+  //console.log('data in db', data);
   Item.find(data, (err, items) => {
     if (err) {
       callback(err, null);
