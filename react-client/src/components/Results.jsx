@@ -15,14 +15,13 @@ border-radius:17px;
 height: 600px;
 width:600px;
 background-color: #13A8E3;
+
 padding: 25px 10px 25px 10px;
 display:flex;
-flex-direction: column;
 justify-content: center;
-
 `;
 const DecideTitle = styled.div`
-//display:flex;
+flex
 `;
 const AilmentList = styled.ul`
 padding:0px;
@@ -30,6 +29,7 @@ margin:0px;
 `;
 
 const Ailment = styled.li`
+
 padding:0px;
 margin:0px;
 list-style-type:none;
@@ -42,41 +42,40 @@ font-weight:bold;
 text-align:center;
  :hover {
   color: #5c5c5c;
-  background-color: #fff;
  }
 `;
-const Recommend = styled.button`
- background-color: #fff;
-`;
-class Decide extends React.Component {
+// chosenAilments() {
+//   this.state.filter( (prop) => {
+//     return prop === true
+//   }
+//     );
+// }
+
+class Results extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
-    this.optionSelector = this.optionSelector.bind(this);
+    this.state = {};
   }
 
-  optionSelector(e) {
-    this.props.decide(e.target.innerText);
+  componentDidMount() {
+    const { chosen } = this.props;
+    // const arr = [...chosen];
+    console.log(chosen);
+    //const selections = chosen.filter(item => item: true);
+    // console.log(selections);
   }
 
   render() {
-    const { strains, recToggle } = this.props;
-    const ailments = ['Pain', 'Nausea', 'Sleep', 'Stress'];
-    const listItems = ailments.map((ailment) => <Ailment className={ailment} key={ailment} onClick={this.optionSelector}><AilmentText>{ailment}</AilmentText></Ailment>);
-
     return (
       <DecideDiv>
         <DecideTitle>
-          <TitleH1>Help me decide</TitleH1>
+          <TitleH1>Results</TitleH1>
+          <AilmentList>
+          </AilmentList>
         </DecideTitle>
-        <AilmentList>
-          {listItems}
-        </AilmentList>
-        <Recommend onClick={recToggle}>Recommend</Recommend>
       </DecideDiv>
     );
   }
 }
 
-export default Decide;
+export default Results;
