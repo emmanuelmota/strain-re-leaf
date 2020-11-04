@@ -19,10 +19,10 @@ const ResultsDiv = styled.div`
   padding: 25px 10px 25px 10px;
   display:flex;
   flex-direction: column;
-  //justify-content: center;
+  justify-content: center;
 `;
 const ResultsTitle = styled.div`
-  display:flex;
+ // display:flex;
 `;
 const StrainList = styled.ul`
   padding:0px;
@@ -40,9 +40,6 @@ const StrainName = styled.h1`
   font-family: verdana;
   font-weight:bold;
    text-align:center;
- :hover {
-  color: #5c5c5c;
- }
 `;
 
 const StrainImg = styled.img`
@@ -61,6 +58,11 @@ const OrderButton = styled.button`
   font-size: 15px;
   font-family: verdana;
   border-radius: 5px;
+  cursor: pointer;
+  :hover {
+    color: #fff;
+    background-color: #5c5c5c;
+   }
 `;
 class Results extends React.Component {
   constructor(props) {

@@ -36,6 +36,7 @@ margin:0px;
 list-style-type:none;
 `;
 const AilmentText = styled.h1`
+cursor: pointer;
 color:white;
 font-size: 25px;
 font-family: verdana;
@@ -45,8 +46,13 @@ text-align:center;
   color: #5c5c5c;
   background-color: #fff;
  }
+ :clicked {
+  color: #5c5c5c;
+  background-color: #fff;
+}
 `;
 const Recommend = styled.button`
+cursor: pointer;
  background-color: #fff;
 `;
 class Decide extends React.Component {
