@@ -12,13 +12,27 @@ color: palevioletred;
 `;
 const DecideDiv = styled.div`
 border-radius:17px;
-height: 600px;
 width:600px;
 background-color: #13A8E3;
 padding: 25px 10px 25px 10px;
 display:flex;
 flex-direction: column;
 justify-content: center;
+animation-duration: 4s;
+animation-name: slidein;
+}
+
+@keyframes slidein {
+from {
+
+  opacity:25%;
+}
+
+to {
+
+  opacity:100%;
+}
+}
 
 `;
 const DecideTitle = styled.div`
@@ -31,6 +45,7 @@ margin:0px;
 `;
 
 const Ailment = styled.li`
+width:100%
 padding:0px;
 margin:0px;
 list-style-type:none;
@@ -52,8 +67,17 @@ text-align:center;
 }
 `;
 const Recommend = styled.button`
+background-color: #fff;
+margin-bottom:25px;
+// color:white;
+font-size: 15px;
+font-family: verdana;
+border-radius: 5px;
 cursor: pointer;
- background-color: #fff;
+:hover {
+  color: #fff;
+  background-color: #5c5c5c;
+ }
 `;
 class Decide extends React.Component {
   constructor(props) {

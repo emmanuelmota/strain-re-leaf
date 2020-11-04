@@ -17,15 +17,29 @@ const ResultsDiv = styled.div`
   width:600px;
   background-color: #13A8E3;
   padding: 25px 10px 25px 10px;
-  display: flex;
+  display:flex;
   flex-direction: column;
   justify-content: center;
   //align-content: center;
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-top: 100%;
+    opacity:25%;
+  }
+
+  to {
+    margin-top: 0%;
+    opacity:100%;
+  }
+}
 `;
 const ResultsTitle = styled.div`
- display:flex;
- flex-direction: column;
-  justify-content: center;
+display:flex;
+justify-content:center;
 `;
 const StrainList = styled.ul`
   padding:0px;
@@ -111,9 +125,9 @@ class Results extends React.Component {
       <StrainName>{strain.name}</StrainName>
       <StrainImg src={strain.img}>
       </StrainImg>
-      <StrainDesc>{strain.short_desc}</StrainDesc>
+      <StrainDesc>Description: {strain.short_desc}</StrainDesc>
       <StrainDesc>Type: {strain.type}</StrainDesc>
-      <StrainDesc>THC %: {strain.thc}</StrainDesc>
+      <StrainDesc>THC: {strain.thc}%</StrainDesc>
       <StrainDesc>Rating: {strain.rating} with: {strain.rating_count} ratings</StrainDesc>
       <StrainDesc>Price: ${Math.floor(Math.random() * (50 - 35) + 35)}</StrainDesc>
       <OrderButton onClick={() => {alert(`Added ${strain.name} to cart!`)}}>Add to cart</OrderButton>
@@ -129,7 +143,7 @@ class Results extends React.Component {
         <StrainList id="StrainList">
           {listItems}
         </StrainList>
-        <OrderButton onClick={() => {alert("Order placed, see you curb side in 30 minutes!")}}>Place order</OrderButton>
+        <OrderButton onClick={() => {alert(`Your order number #${Math.floor(Math.random() * (10000 - 9000) + 9000)} has been placed! Bring your ID, prescription and form of payment. You can pick up your order ${Math.floor(Math.random() * (30 - 20) + 20)} minutes from now!`)}}>Place order</OrderButton>
       </ResultsDiv>
     );
   }
