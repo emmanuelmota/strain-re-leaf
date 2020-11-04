@@ -36,14 +36,12 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // console.log('Hi!');
     this.getAll();
   }
 
   getAll() {
     axios.get('/items')
       .then((response) => {
-        // console.log(response.data);
         this.setState({
           items: response.data,
         });
@@ -54,7 +52,7 @@ class App extends React.Component {
   }
 
   optionSelector(ailment) {
-    const { Count, options } = this.state; // Select no more than 3
+    const { Count, options } = this.state;
     let track = false;
     if (Count < 3) {
       if (options[ailment] === false) {
@@ -69,21 +67,17 @@ class App extends React.Component {
 
   optionFalse(ailment) {
     const { Count, options } = this.state;
-    // console.log(`${options[ailment]} boolean in false`);
     let prevOption = options;
     let prevCount = Count;
     prevOption[ailment] = !options[ailment];
-    // console.log(prevOption[ailment], ' new boolean');
     this.setState({
       Count: prevCount + 1,
       options: prevOption,
     });
-    //  console.log(`${options[ailment]} boolean After if`);
   }
 
   optionTrue(ailment) {
     const { Count, options } = this.state;
-    // console.log(`${ailment} boolean in true`);
     let beforeOptions = options;
     let lastCount = Count;
     beforeOptions[ailment] = !beforeOptions[ailment];
@@ -104,7 +98,7 @@ class App extends React.Component {
   render() {
     const { items, decideShow, recommendShow, options, chosen } = this.state;
     const decide = decideShow ? (
-      <Decide decide={this.optionSelector} recToggle={this.recommendToggle} />
+      <Decide decide={this.optionSelector} options={options} recToggle={this.recommendToggle} />
     )
       : <div />;
     const results = recommendShow ? (

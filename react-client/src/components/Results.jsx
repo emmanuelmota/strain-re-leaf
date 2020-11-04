@@ -17,12 +17,15 @@ const ResultsDiv = styled.div`
   width:600px;
   background-color: #13A8E3;
   padding: 25px 10px 25px 10px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
+  //align-content: center;
 `;
 const ResultsTitle = styled.div`
- // display:flex;
+ display:flex;
+ flex-direction: column;
+  justify-content: center;
 `;
 const StrainList = styled.ul`
   padding:0px;
@@ -43,7 +46,7 @@ const StrainName = styled.h1`
 `;
 
 const StrainImg = styled.img`
-  width:50px;
+  width:250px;
   border-radius: 5px;
 `;
 const StrainDesc = styled.p`
@@ -80,18 +83,6 @@ class Results extends React.Component {
   filterIt() {
     const { chosen, available } = this.props;
     const { select } = this.state;
-    // let chosenFiltered = [];
-    // Object.keys(chosen).forEach(key => {
-    //   if (chosen[key] === true) {
-    //     console.log(key, chosen[key]);
-    //     chosenFiltered.push({[key]:chosen[key]});
-    //   }
-    // });
-    // this.setState ({
-    //   select: chosenFiltered,
-    // });
-
-    // filter chosen to only have true
     const filteredObj = Object.keys(chosen).reduce((p, c) => {
       if (chosen[c]) p[c] = chosen[c];
       return p;
@@ -133,7 +124,7 @@ class Results extends React.Component {
     return (
       <ResultsDiv id="ResultsDiv">
         <ResultsTitle id="ResultsTitle">
-          <TitleH1 id="TitleH1">Results</TitleH1>
+          <TitleH1 id="TitleH1">Results:</TitleH1>
         </ResultsTitle>
         <StrainList id="StrainList">
           {listItems}

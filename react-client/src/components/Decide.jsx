@@ -34,6 +34,7 @@ const Ailment = styled.li`
 padding:0px;
 margin:0px;
 list-style-type:none;
+
 `;
 const AilmentText = styled.h1`
 cursor: pointer;
@@ -46,9 +47,8 @@ text-align:center;
   color: #5c5c5c;
   background-color: #fff;
  }
- :clicked {
-  color: #5c5c5c;
-  background-color: #fff;
+ :active {
+  color: #13A8E3;
 }
 `;
 const Recommend = styled.button`
