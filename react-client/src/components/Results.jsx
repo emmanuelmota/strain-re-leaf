@@ -8,7 +8,6 @@ const TitleH1 = styled.h1`
   color: white;
   font-family: verdana;
 `;
-
 const StrainH1 = styled.h1`
   color: palevioletred;
 `;
@@ -23,13 +22,11 @@ const ResultsDiv = styled.div`
   animation-duration: 1s;
   animation-name: slidein;
 }
-
 @keyframes slidein {
   from {
     margin-top: 100%;
     opacity:25%;
   }
-
   to {
     margin-top: 0%;
     opacity:100%;
@@ -44,7 +41,6 @@ const StrainList = styled.ul`
   padding:0px;
   margin:0px;
 `;
-
 const Strain = styled.li`
   padding:0px;
   margin:0px;
@@ -57,7 +53,6 @@ const StrainName = styled.h1`
   font-weight:bold;
    text-align:center;
 `;
-
 const StrainImg = styled.img`
   width:450px;
   border-radius: 5px;
@@ -106,7 +101,7 @@ class Results extends React.Component {
       params: filteredObj,
     })
       .then((response) => {
-         console.log(' back from DB', response.data);
+        console.log(' back from DB', response.data);
         this.setState({
           select: response.data,
         });
@@ -119,21 +114,18 @@ class Results extends React.Component {
   render() {
     const { select } = this.state;
     const listItems = select.map((strain) => {
-      return (
-    <Strain key={strain.name}>
-      <StrainName>{strain.name}</StrainName>
-      <StrainImg src={strain.img}>
-      </StrainImg>
-      <StrainDesc>Description: {strain.short_desc}</StrainDesc>
-      <StrainDesc>Type: {strain.type}</StrainDesc>
-      <StrainDesc>THC: {strain.thc}%</StrainDesc>
-      <StrainDesc>Rating: {strain.rating} with: {strain.rating_count} ratings</StrainDesc>
-      <StrainDesc>Price: ${Math.floor(Math.random() * (50 - 35) + 35)}</StrainDesc>
-      <OrderButton onClick={() => {alert(`Added ${strain.name} to cart!`)}}>Add to cart</OrderButton>
-    </Strain>
-    )
+      return (<Strain key={strain.name}>
+          <StrainName>{strain.name}</StrainName>
+          <StrainImg src={strain.img} />
+          <StrainDesc>Description: {strain.short_desc}</StrainDesc>
+          <StrainDesc>Type: {strain.type}</StrainDesc>
+          <StrainDesc>THC: {strain.thc}%</StrainDesc>
+          <StrainDesc>Rating: {strain.rating} with: {strain.rating_count} ratings</StrainDesc>
+          <StrainDesc>Price: ${Math.floor(Math.random() * (50 - 35) + 35)}</StrainDesc>
+          <OrderButton onClick={() => { alert(`Added ${strain.name} to cart!`) }}>Add to cart</OrderButton>
+        </Strain>
+      )
     });
-  //  thc
     return (
       <ResultsDiv id="ResultsDiv">
         <ResultsTitle id="ResultsTitle">
@@ -142,7 +134,7 @@ class Results extends React.Component {
         <StrainList id="StrainList">
           {listItems}
         </StrainList>
-        <OrderButton onClick={() => {alert(`Your order number #${Math.floor(Math.random() * (10000 - 9000) + 9000)} has been placed! Bring your ID, prescription and form of payment. You can pick up your order ${Math.floor(Math.random() * (30 - 20) + 20)} minutes from now!`)}}>Place order</OrderButton>
+        <OrderButton onClick={() => { alert(`Your order number #${Math.floor(Math.random() * (10000 - 9000) + 9000)} has been placed! Bring your ID, prescription and form of payment. You can pick up your order ${Math.floor(Math.random() * (30 - 20) + 20)} minutes from now!`) }}>Place order</OrderButton>
       </ResultsDiv>
     );
   }
