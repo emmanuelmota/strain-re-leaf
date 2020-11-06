@@ -17,10 +17,9 @@ const ResultsDiv = styled.div`
   width:600px;
   background-color: #13A8E3;
   padding: 25px 10px 25px 10px;
-  display:flex;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  //align-content: center;
+  text-align: -webkit-center;
   animation-duration: 1s;
   animation-name: slidein;
 }
@@ -60,7 +59,7 @@ const StrainName = styled.h1`
 `;
 
 const StrainImg = styled.img`
-  width:250px;
+  width:450px;
   border-radius: 5px;
 `;
 const StrainDesc = styled.p`
