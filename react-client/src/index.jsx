@@ -8,8 +8,8 @@ import Results from './components/Results.jsx';
 const axios = require('axios').default;
 
 const Master = styled.div`
-  width: 50%;
-  margin: auto;
+  // width: 50%;
+  // margin: auto;
 `;
 
 class App extends React.Component {

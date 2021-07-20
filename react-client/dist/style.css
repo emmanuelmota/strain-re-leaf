@@ -1,16 +1,21 @@
 body {
-  margin: auto;
-  width: 50%;
+  /* margin: auto;
+  width: 50%; */
   padding: 0px;
 }
 
 #header {
-  margin: 0px;
+  margin: auto;
   background-image: url("./header.png");
   height: 110px;
   width: 1200px;
   background-repeat: no-repeat;
-font-family: sans;
+  font-family: sans;
+}
+#app {
+  margin: auto;
+  width: 600px;
+
 }
 
 h1 {

@@ -12,7 +12,7 @@ color: palevioletred;
 `;
 const DecideDiv = styled.div`
 border-radius:17px;
-width:600px;
+// width:600px;
 background-color: #13A8E3;
 padding: 25px 10px 25px 10px;
 display:flex;
